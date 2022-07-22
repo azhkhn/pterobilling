@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2022: true
   },
-  extends: ['prettier', 'plugin:react/strict', 'plugin:@typescript-eslint/recommended'],
+  extends: [
+    'prettier',
+    'plugin:react/strict',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
