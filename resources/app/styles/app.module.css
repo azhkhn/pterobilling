@@ -1,0 +1,12 @@
+.app {
+  @apply bg-slate-600  h-screen;
+
+  @apply flex flex-col items-center justify-center;
+  @apply text-4xl font-bold uppercase font-mono;
+
+  .text {
+    @apply animate-pulse text-orange-400;
+
+    text-shadow: 0 0 3rem theme('colors.orange.500');
+  }
+}

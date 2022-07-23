@@ -5,8 +5,22 @@ import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import eslintPlugin from 'vite-plugin-eslint'
 import laravel from 'laravel-vite-plugin'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+      generateScopedName(name, filename) {
+        let file = path.basename(filename, '.css')
+        if (file.endsWith('.module')) {
+          file = path.basename(file, '.module')
+        }
+
+        return `${file}__${name}`
+      }
+    }
+  },
   plugins: [
     laravel({
       input: ['resources/app/index.tsx'],
