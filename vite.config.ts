@@ -1,9 +1,10 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import eslintPlugin from 'vite-plugin-eslint'
 import laravel from 'laravel-vite-plugin'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [
@@ -11,11 +12,13 @@ export default defineConfig({
       input: ['resources/app/index.tsx'],
       refresh: true
     }),
+    react(),
     eslintPlugin({
       fix: true,
       emitError: true,
       include: ['./resources/app/**/*.{tsx,ts,mdx}', './resources/stories/**/*.{ts,tsx,mdx}']
-    })
+    }),
+    splitVendorChunkPlugin()
   ],
   resolve: {
     alias: {

@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-function App(props) {
-    return (
-        <React.StrictMode>
-            <h1>Hello world !</h1>
-        </React.StrictMode>
-    );
+function App(): JSX.Element {
+  return (
+    <React.StrictMode>
+      <h1>Hello world!</h1>
+    </React.StrictMode>
+  )
 }
 
-export default App;
+export default App

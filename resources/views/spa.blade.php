@@ -8,11 +8,11 @@
     <title>Laravel</title>
 
     @viteReactRefresh
-    @vite('resources/app/app.tsx')
+    @vite('resources/app/index.tsx')
 </head>
 
-<body class="antialiased">
-
+<body>
+    <div id="root"></div>
 </body>
 
 </html>

@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: [
     'prettier',
-    'plugin:react/strict',
+    'plugin:react/jsx-runtime',
     'plugin:@typescript-eslint/recommended',
     'plugin:storybook/recommended'
   ],
@@ -28,11 +28,11 @@ module.exports = {
       }
     ],
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['warning'],
+    '@typescript-eslint/no-unused-vars': ['warn'],
     'react/jsx-filename-extension': [
       'warn',
       {
-        extensions: ['.tsx']
+        extensions: ['.tsx', '.mdx']
       }
     ]
   },
